@@ -24,4 +24,62 @@ body {
 .cs-tooltip {
     font-size: 34px;
     margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.cs-tooltip:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Only increase size and font - keep original CS:GO styling */
+#newGameDialog {
+    max-width: 800px !important;
+    width: 90vw !important;
+    min-height: 600px !important;
+}
+
+/* Increase dialog content area */
+#newGameDialog .panel {
+    padding: 30px !important;
+    max-height: 500px !important;
+    overflow-y: auto !important;
+}
+
+/* Make paragraphs more readable */
+#newGameDialog .panel p {
+    font-size: 18px !important;
+    line-height: 1.7 !important;
+    margin-bottom: 20px !important;
+}
+
+/* Style the map selector */
+#newGameDialog .cs-select__label {
+    font-size: 18px !important;
+    margin-bottom: 10px !important;
+}
+
+#newGameDialog .cs-select {
+    font-size: 16px !important;
+    padding: 12px !important;
+    margin-bottom: 25px !important;
+}
+
+/* Increase header size */
+#newGameDialog .heading {
+    padding: 20px 30px !important;
+}
+
+#newGameDialog .text {
+    font-size: 24px !important;
+}
+
+/* Increase footer button size */
+#newGameDialog .footer-btns {
+    padding: 20px 30px !important;
+}
+
+#newGameDialog .cs-btn {
+    font-size: 16px !important;
+    padding: 12px 24px !important;
 }
