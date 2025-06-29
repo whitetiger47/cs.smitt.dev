@@ -1,29 +1,82 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ekmas/cs16.css@main/css/cs16.min.css">
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <div class="cs-tooltip-container">
-          <div class="cs-tooltip" onclick="newGame()">
-            New Game
-          </div>
-          <br />
-          <div class="cs-tooltip">
-            Find Servers
-          </div>
-          <br />
-          <div class="cs-tooltip">
-            Options
-          </div>
-          <br />
-          <div class="cs-tooltip">
-            Exit
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ekmas/cs16.css@main/css/cs16.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preload" href="images/intro.webm" as="video" type="video/webm" fetchpriority="high">
+  <link rel="preload" href="images/background.png" as="image" fetchpriority="high">
+</head>
+
+<body>
+  <!--<div id="video-overlay">
+    <video src="images/intro.webm"></video>
+  </div>-->
+
+  <div class="container">
+    <div class="menu-item" data-section="new-game">New Game</div>
+    <div class="menu-item" data-section="find-servers">Find Servers</div>
+    <div class="menu-item" data-section="options">Options</div>
+    <div class="menu-item" data-section="exit-game">Exit Game</div>
+  </div>
+
+  <dialog class="cs-dialog new-game-dialog" id="new-game-dialog">
+    <form method="dialog">
+      <div class="heading">
+        <div class="wrapper">
+          <div class="icon"></div>
+          <p class="text">Create Server</p>
+        </div>
+        <button class="cs-btn close"></button>
+      </div>
+      <div class="content">
+        <div class="cs-tabs">
+          <input class="radiotab" name="tabs" tabindex="1" type="radio" id="tabone" checked />
+          <label class="label" for="tabone">Server</label>
+          <div class="panel" tabindex="1">
+            <div class="map-selector">
+              <label>Map</label>
+              <select class="cs-select">
+                <option selected>de_home</option>
+              </select>
+            </div>
+            <div style="height: 0.5rem;"></div>
+            <hr class="cs-hr" />
+            <div style="height: 0.5rem;"></div>
+            <div class="text description">
+              <p>Hello, I'm Smit. This website is a tribute to Counter Strike.</p>
+
+              <p>I first played Counter Strike 1.6 when I was 12 years old. Since then, this game has been a big part of
+                my life. What began as a pixelated escape from real world, soon became a corner stone of my identity and
+                a
+                digital home where I made new friends.</p>
+
+              <p>As a kid, I could leave behind the weight of school stress or family struggles, diving headfirst into
+                the
+                adrenaline-pumping rhythm of de_dust2 or cs_office.
+                The crack of an AK-47, the satisfying clink of a well-placed headshot, and the tense silence before a
+                clutch
+                moment were my refuge.
+                It didn't matter who I was outside the server; in those moments, I was a strategist, a teammate, a
+                survivor.
+              </p>
+              <p>Here's to Counter-Strike, the game that shaped a generation, and the one I'll always load up, ready for
+                one
+                more match.</p>
+            </div>
           </div>
         </div>
-        <script src="style.js"></script>
-    </body>
+      </div>
+      <menu class="footer-btns">
+        <button type="button" class="cs-btn" id="new-game-start">Start</button>
+        <button type="button" class="cs-btn" id="new-game-cancel">Cancel</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="style.js"></script>
+</body>
+
 </html>
