@@ -21,8 +21,28 @@ function initNewGame() {
     return dialog;
 }
 
+function initQuitGame() {
+    const dialog = document.querySelector('#quit-game-dialog');
+    if(!dialog) return null;
+
+    const exitSound = new Audio('sounds/window_close.wav');
+
+    dialog.querySelector('#quit-game-dialog-yes').addEventListener('click', function() {
+        window.location.href = "https://x.com/itsoksmit";
+    });
+
+    dialog.querySelector('#quit-game-dialog-no').addEventListener('click', function() {
+        dialog.close();
+        exitSound.currentTime = 0;
+        exitSound.play();
+    });
+
+    return dialog;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const newGame = initNewGame();
+    const exit = initQuitGame();
     const menuItems = document.querySelectorAll('.menu-item')
     menuItems.forEach(item => {
         item.addEventListener('click', function (e) {
@@ -33,6 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
             switch (sectionID) {
                 case 'new-game':
                     if (newGame) newGame.showModal();
+                    break;
+
+                case 'exit-game':
+                    if(exit) exit.showModal();
                     break;
             }
         })

@@ -15,13 +15,15 @@
     <video src="images/intro.webm"></video>
   </div>-->
 
+  <!--Menu-->
   <div class="container">
     <div class="menu-item" data-section="new-game">New Game</div>
     <div class="menu-item" data-section="find-servers">Find Servers</div>
     <div class="menu-item" data-section="options">Options</div>
-    <div class="menu-item" data-section="exit-game">Exit Game</div>
+    <div class="menu-item" data-section="exit-game">Quit</div>
   </div>
 
+  <!--New Game Dialog-->
   <dialog class="cs-dialog new-game-dialog" id="new-game-dialog">
     <form method="dialog">
       <div class="heading">
@@ -72,6 +74,27 @@
       <menu class="footer-btns">
         <button type="button" class="cs-btn" id="new-game-start">Start</button>
         <button type="button" class="cs-btn" id="new-game-cancel">Cancel</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <!--Quit Dialog-->
+  <dialog class="cs-dialog" id="quit-game-dialog">
+    <form method="dialog">
+      <div class="heading">
+        <div class="wrapper">
+          <div class="icon"></div>
+          <p class="text">Confirm</p>
+        </div>
+        <button class="cs-btn close"></button>
+      </div>
+      <div class="content">
+        <p>Are you sure you want to quit?</p>
+        <p>This will redirect you to my Twitter profile.</p>
+      </div>
+      <menu class="footer-btns">
+        <button class="cs-btn" id="quit-game-dialog-yes">Yes</button>
+        <button class="cs-btn" id="quit-game-dialog-no">No</button>
       </menu>
     </form>
   </dialog>
