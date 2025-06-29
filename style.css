@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('images/background.png');
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
@@ -10,6 +10,7 @@ body {
     color: white;
     overflow: hidden;
     font-size: 115%;
+    min-height: 100vh;
 }
 
 .cs-dialog .text.description p {
