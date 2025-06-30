@@ -1,3 +1,28 @@
+#intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+#intro-overlay video {
+    border-radius: 8px;
+    width: 160px;
+    height: 120px;
+}
+
+.hidden {
+    opacity: 0 !important;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -186,4 +211,96 @@ body {
 
 .spray-paint-dropdowns .tint {
     margin-top: 30px;
+}
+
+.servers-dialog.cs-dialog {
+    max-width: 900px;
+    width: 900px;
+}
+
+.servers-dialog.cs-dialog .cs-tabs .panel {
+    padding: 10px 0 10px;
+}
+
+.server-browser {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 250px;
+    background-color: var(--secondary-bg);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-light);
+    overflow-y: auto;
+}
+
+.server-list-header {
+    display: flex;
+
+    .cs-btn {
+        font-size: 18px;
+    }
+}
+
+.server-item {
+    display: flex;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.1;
+}
+
+.server-item-column {
+    padding: 4px 6px;
+    overflow: hidden;
+}
+
+.server-item-column.project-description-column {
+    padding-right: 10px;
+}
+
+.server-item.selected {
+    background-color: var(--secondary-accent);
+}
+
+.project-name-column {
+    flex: 1;
+}
+
+.project-description-column {
+    flex: 3;
+}
+
+.project-stack-column {
+    flex: 1.5;
+}
+
+.project-status-column {
+    flex: 0.5;
+}
+
+.server-actions {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+    float: right;
+    margin-right: 10px;
+}
+
+.server-actions .cs-btn {
+    font-size: 23px;
+    padding: 6px 5px 6px;
+    width: 100px;
+    text-align: left;
+}
+
+.build-smth-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.build-smth-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.8);
 }

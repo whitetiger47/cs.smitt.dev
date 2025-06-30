@@ -8,12 +8,25 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="preload" href="images/intro.webm" as="video" type="video/webm" fetchpriority="high">
   <link rel="preload" href="images/background.png" as="image" fetchpriority="high">
+  <link rel="preload" href="images/adult.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="images/city.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="images/kid.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="sounds/window_close.wav" as="audio" fetchpriority="high">
+  <link rel="preload" href="sounds/cs-go-bomb-has-been-defused.mp3" as="audio" fetchpriority="high">
+  <link rel="preload" href="sounds/throwing-flashbang-sound-effect-cs-go.mp3" as="audio" fetchpriority="high">
+  <link rel="preload" href="sounds/go.wav" as="audio" fetchpriority="high">
+  <link rel="preload" href="images/intro.webm" as="video" type="video/webm" fetchpriority="high">
 </head>
 
 <body>
-  <!--<div id="video-overlay">
-    <video src="images/intro.webm"></video>
-  </div>-->
+  <div id="intro-overlay">
+    <video id="intro-video" autoplay muted playsinline
+      aria-label="Classic Valve intro meshed with Dwayne Johnson eyebrow raise">
+      <source src="images/intro.webm" type="video/webm">
+      <p>Your browser doesn't support HTML video. This should be classic Valve intro meshed with Dwayne Johnson eyebrow
+        raise.</p>
+    </video>
+  </div>
 
   <!--Menu-->
   <div class="container">
@@ -99,6 +112,67 @@
     </form>
   </dialog>
 
+  <!--Find Servers Dialog-->
+  <dialog class="cs-dialog servers-dialog" id="servers-dialog">
+    <form method="dialog">
+      <div class="heading">
+        <div class="wrapper">
+          <div class="icon"></div>
+          <p class="text">Servers</p>
+        </div>
+        <button class="cs-btn close"></button>
+      </div>
+      <div class="content servers">
+        <div class="cs-tabs">
+          <input class="radiotab" name="server-tabs" tabindex="1" type="radio" id="favorites-tab" checked />
+          <label class="label" for="favorites-tab">Favorites</label>
+          <div class="panel" tabindex="1">
+            <div class="server-browser">
+              <div class="server-list-header">
+                <div class="project-name-column cs-btn">Game</div>
+                <div class="project-description-column cs-btn">Servers (4)</div>
+                <div class="project-stack-column cs-btn">Players</div>
+                <div class="project-status-column cs-btn">Status</div>
+              </div>
+              <div class="server-list">
+                <div class="server-item" data-url="https://github.com/whitetiger47/cs.smitt.dev">
+                  <div class="project-name-column server-item-column">cs1.6</div>
+                  <div class="project-description-column server-item-column">A tribute to Counter Strike</div>
+                  <div class="project-stack-column server-item-column">HTML, CSS, JavaScript</div>
+                  <div class="project-status-column server-item-column">Live</div>
+                </div>
+                <div class="server-item" data-url="https://www.smitt.dev/">
+                  <div class="project-name-column server-item-column">brain dump</div>
+                  <div class="project-description-column server-item-column">A website where I dump my thoughts</div>
+                  <div class="project-stack-column server-item-column">React, JavaScript</div>
+                  <div class="project-status-column server-item-column">Live</div>
+                </div>
+                <div class="server-item" data-url="https://github.com/whitetiger47/Game-Companion">
+                  <div class="project-name-column server-item-column">Game Companion</div>
+                  <div class="project-description-column server-item-column">Android app that connects you with gamers
+                    around your area</div>
+                  <div class="project-stack-column server-item-column">Kotlin, Java</div>
+                  <div class="project-status-column server-item-column">Dumped</div>
+                </div>
+                <div class="server-item" data-url="https://github.com/whitetiger47/Database">
+                  <div class="project-name-column server-item-column">CLI Database</div>
+                  <div class="project-description-column server-item-column">A Java-based CLI database management system
+                  </div>
+                  <div class="project-stack-column server-item-column">Java</div>
+                  <div class="project-status-column server-item-column">Offline</div>
+                </div>
+              </div>
+            </div>
+            <div class="server-actions">
+              <button type="button" class="cs-btn" id="refresh-btn">Refresh</button>
+              <button type="button" class="cs-btn" id="connect-btn" disabled>Connect</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
   <!--Options Dialog-->
   <section>
     <dialog class="cs-dialog" id="options-game-dialog">
@@ -124,8 +198,8 @@
                 <img id="spray-preview" src="images/bro.jpg" alt="Spray Preview" style="height:auto; display:block;">
                 <div class="spray-paint-dropdowns">
                   <select class="cs-select" name="spraypaint" id="spraypaint">
-                    <option value="bro">bro</option>
-                    <option value="13 year old">13</option>
+                    <option value="adult">adult</option>
+                    <option value="city">city</option>
                     <option value="kid">kid</option>
                   </select>
                   <select class="cs-select" name="tint" id="tint">
