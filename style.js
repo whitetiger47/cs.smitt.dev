@@ -36,6 +36,24 @@ function initQuitGame() {
         exitSound.currentTime = 0;
         exitSound.play();
     });
+    return dialog;
+}
+
+function initOptionsGame() {
+    const select = document.querySelector('#spraypaint');
+    const preview = document.querySelector('#spray-preview');
+    const dialog = document.querySelector('#options-game-dialog');
+    if(!dialog) return null;
+
+    const imageMap = {
+        'bro': 'images/bro.jpg',
+        '13 year old': 'images/13 year old.jpg',
+        'kid': 'images/kid.jpg'
+    }
+
+    select.addEventListener('change', function() {
+        preview.src = imageMap[this.value];
+    });
 
     return dialog;
 }
@@ -43,6 +61,7 @@ function initQuitGame() {
 document.addEventListener('DOMContentLoaded', function () {
     const newGame = initNewGame();
     const exit = initQuitGame();
+    const options = initOptionsGame();
     const menuItems = document.querySelectorAll('.menu-item')
     menuItems.forEach(item => {
         item.addEventListener('click', function (e) {
@@ -57,6 +76,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 case 'exit-game':
                     if(exit) exit.showModal();
+                    break;
+
+                case 'options':
+                    if(options) options.showModal();
                     break;
             }
         })

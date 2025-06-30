@@ -99,6 +99,77 @@
     </form>
   </dialog>
 
+  <!--Options Dialog-->
+  <section>
+    <dialog class="cs-dialog" id="options-game-dialog">
+      <form method="dialog">
+        <div class="heading">
+          <div class="wrapper">
+            <div class="icon"></div>
+            <p class="text">Options</p>
+          </div>
+          <button class="cs-btn close"></button>
+        </div>
+        <div class="cs-tabs">
+          <input class="radiotab" name="tabs" tabindex="1" type="radio" id="tabone" checked="checked" />
+          <label class="label" for="tabone">Multiplayer</label>
+          <div class="panel" tabindex="1">
+            <div class="upper-left-corner">
+              <p>Player name</p>
+              <input type="text" value="Smit" class="cs-input" readonly />
+            </div>
+            <div class="spray-paint">
+              <p>Avatar</p>
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <img id="spray-preview" src="images/bro.jpg" alt="Spray Preview" style="width:100px; height:auto; display:block;">
+                <select class="cs-select" name="spraypaint" id="spraypaint">
+                  <option value="bro">bro</option>
+                  <option value="13 year old">13</option>
+                  <option value="kid">kid</option>
+                </select>
+              </div>
+            </div>
+            <div class="age-and-city-row">
+              <div class="age-section">   
+                <div class="age-slider-row">
+                  <div class="cs-slider">
+                    <div class="value">
+                      <p>0</p>
+                      <p>100</p>
+                    </div>
+                    <div class="ruler"></div>
+                    <input type="range" id="age-range" min="0" max="100" value="26" disabled>
+                    <label for="age-range">Age</label>
+                  </div>
+                  <div class="age-input-row">
+                    <input type="text" id="age-value" class="cs-input age-input" readonly value="26">
+                  </div>
+                </div>
+              </div>
+              <div class="city-section">
+                <label for="city">Location:</label>
+                <input type="text" id="city" class="cs-input" readonly value="Vancouver, Canada">
+              </div>
+            </div>
+            <div class="upper-right-corner">
+              <div class="symbol-rectangle">
+                <pre>
+                  @@@@@@@@@@@@@@@@@@@@@@@@@@@
+                  @ hi,                     @
+                  @  checkout               @
+                  @  what i'm <a class="build-smth-link cs-tooltip">building<span class="build-smth-tooltip-text text">View projects</span></a>      @
+                  @                         @
+                  @  connect with me on,    @
+                  @  <a class="twitter-link" target="_blank" href="https://x.com/itsoksmit">Twitter</a>                @
+                  @  <a class="github-link" target="_blank" href="https://github.com/whitetiger47">GitHub</a>                 @
+                  @@@@@@@@@@@@@@@@@@@@@@@@@@@
+                </pre>
+            </div>
+          </div>
+      </form>
+    </dialog>
+  </section>
+
   <script src="style.js"></script>
 </body>
 
