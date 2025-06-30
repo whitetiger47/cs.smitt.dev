@@ -120,17 +120,28 @@
             </div>
             <div class="spray-paint">
               <p>Avatar</p>
-              <div style="display: flex; align-items: center; gap: 1rem;">
-                <img id="spray-preview" src="images/bro.jpg" alt="Spray Preview" style="width:100px; height:auto; display:block;">
-                <select class="cs-select" name="spraypaint" id="spraypaint">
-                  <option value="bro">bro</option>
-                  <option value="13 year old">13</option>
-                  <option value="kid">kid</option>
-                </select>
+              <div class="spray-paint-container">
+                <img id="spray-preview" src="images/bro.jpg" alt="Spray Preview" style="height:auto; display:block;">
+                <div class="spray-paint-dropdowns">
+                  <select class="cs-select" name="spraypaint" id="spraypaint">
+                    <option value="bro">bro</option>
+                    <option value="13 year old">13</option>
+                    <option value="kid">kid</option>
+                  </select>
+                  <select class="cs-select" name="tint" id="tint">
+                    <option value="none">None</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="purple">Purple</option>
+                    <option value="orange">Orange</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="age-and-city-row">
-              <div class="age-section">   
+              <div class="age-section">
                 <div class="age-slider-row">
                   <div class="cs-slider">
                     <div class="value">
@@ -164,8 +175,15 @@
                   @  <a class="github-link" target="_blank" href="https://github.com/whitetiger47">GitHub</a>                 @
                   @@@@@@@@@@@@@@@@@@@@@@@@@@@
                 </pre>
+              </div>
             </div>
           </div>
+        </div>
+        <menu class="footer-btns">
+          <button type="button" class="cs-btn" id="options-ok">OK</button>
+          <button type="button" class="cs-btn" id="options-apply">Apply</button>
+          <button type="button" class="cs-btn" id="options-cancel">Cancel</button>
+        </menu>
       </form>
     </dialog>
   </section>
